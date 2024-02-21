@@ -1,4 +1,6 @@
-# NCSU GIS 714 Spring 2023: Tangible Landscape
+# NCSU GIS 714 Spring 2024: Tangible Landscape
+
+_Vaclav Petras_
 
 ## How to add a new activity
 
