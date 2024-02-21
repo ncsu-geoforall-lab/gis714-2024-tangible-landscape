@@ -1,8 +1,7 @@
 # NCSU GIS 714 Spring 2024: Tangible Landscape
 
-_Vaclav Petras_
-
 ## How to add a new activity
+_Vaclav Petras_
 
 To add a new activity to this project, you need to fork this repository, create a branch, create a pull request,
 and, of course, develop your new activity. The following sections go over the specific steps.
