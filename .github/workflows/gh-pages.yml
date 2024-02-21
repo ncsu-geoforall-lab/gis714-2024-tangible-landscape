@@ -3,7 +3,7 @@ name: Publish GH Pages
 on:
   push:
     branches:
-      - main
+      - master
 
 jobs:
   render:
