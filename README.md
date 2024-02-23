@@ -1,5 +1,11 @@
 # NCSU GIS 714 Spring 2024: Tangible Landscape
 
+[Notebook Tutorial and Assignment Directions](https://github.com/ncsu-geoforall-lab/GIS714-assignments/tree/main/Tangible_Landscape/)
+
+[GIS714 Website](https://ncsu-geoforall-lab.github.io/geospatial-simulations-course/topics/tangible_landscape.html)
+
+[GIS714-assignments Intro to Git](https://github.com/ncsu-geoforall-lab/GIS714-assignments/tree/main/Intro_To_Git)
+
 ## How to add a new activity
 _Vaclav Petras_
 
