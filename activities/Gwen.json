@@ -2,7 +2,11 @@
   "tasks": [
     {
       "layers": [
-        ["d.rast", "map=slope"]
+        ["d.rast", "map=slope"],
+        [
+          "d.vect", "map=data", "color=red", "fill_color=orange",
+          "icon=basic/star", "size=15"
+        ]
       ],
       "base": "elev_lid792_1m",
       "scanning_params": {
@@ -11,10 +15,10 @@
         "numscans": 1,
         "interpolate": true
       },
-      "analyses": "simple_example.py",
-      "title": "Slope and Contours",
-      "author": "Example Contributor",
-      "instructions": "Change topography and observe changes in slope and contours."
+      "analyses": "Gwen.py",
+      "title": "Selecting locations for pollinator gardens that minimize overall travel time between floral resources",
+      "author": "Gwen Kirschke",
+      "instructions": "Add garden locations and program will calculate minimum distance between gardens"
     }
   ]
 }
