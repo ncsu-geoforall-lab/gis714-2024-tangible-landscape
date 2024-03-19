@@ -4,7 +4,7 @@
       "layers": [
         ["d.rast", "map=slope"],
         [
-          "d.vect", "map=data", "color=red", "fill_color=orange",
+          "d.vect", "map=trail", "color=red", "fill_color=orange",
           "icon=basic/star", "size=15"
         ]
       ],
@@ -14,6 +14,7 @@
         "zexag": 2,
         "numscans": 1,
         "interpolate": true
+        "calibrate":true
       },
       "analyses": "Gwen.py",
       "title": "Selecting locations for pollinator gardens that minimize overall travel time between floral resources",
