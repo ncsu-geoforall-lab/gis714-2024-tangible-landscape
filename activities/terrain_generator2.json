@@ -1,0 +1,21 @@
+{
+  "tasks": [
+    {
+      "layers": [
+        ["d.rast", "map=synthetic_elevation"],
+        ["d.rast", "map=synthetic_slope"]
+      ],
+      "base": "synthetic_elevation",
+      "scanning_params": {
+        "smooth": 10,
+        "zexag": 2,
+        "numscans": 1,
+        "interpolate": true
+      },
+      "analyses": "terrain_generator2.py",
+      "title": "Synthetic Terrain Generation",
+      "author": "Qasim Adegbite",
+      "instructions": "Generate synthetic terrain data and observe changes."
+    }
+  ]
+}
