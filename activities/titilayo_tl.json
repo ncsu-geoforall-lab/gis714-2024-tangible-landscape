@@ -2,7 +2,7 @@
   "tasks": [
     {
       "layers": [
-        ["d.rast", "map=elev_lid792_2m"], ["d.rast", "map=flood"],
+        ["d.rast", "map=rural_streams"], ["raster_series", "map_series=flooding"]
       ],
       "base": "elev_lid792_2m",
       "scanning_params": {
@@ -14,7 +14,7 @@
       "analyses": "titilayo_tl.py",
       "title": "Water level and overland flow",
       "author": "Titilayo Tajudeen",
-      "instructions": "Change in water level and observed change in overland flow."
+      "instructions": "Change in water level and observed change in overland flow using stream raster as the seed point."
     }
   ]
 }
