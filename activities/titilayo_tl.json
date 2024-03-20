@@ -2,7 +2,7 @@
   "tasks": [
     {
       "layers": [
-        ["d.rast", "map=rural_streams"], ["raster_series", "map_series=flooding"]
+        ["d.rast", "map=rural_streams"], ["raster_series", "series_map=flooding"]
       ],
       "base": "elev_lid792_2m",
       "scanning_params": {
