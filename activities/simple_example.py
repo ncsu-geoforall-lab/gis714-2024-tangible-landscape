@@ -28,6 +28,7 @@ def run_slope(scanned_elev, env, **kwargs):
     gs.run_command("r.slope.aspect", elevation=scanned_elev, slope="slope", env=env)
 
 
+
 def run_contours(scanned_elev, env, **kwargs):
     interval = 5
     gs.run_command(
