@@ -5,8 +5,33 @@ import os
 import grass.script as gs
 
 
-def run_slope(scanned_elev, env, **kwargs):
-    gs.run_command("r.slope.aspect", elevation=scanned_elev, slope="slope", env=env)
+def run_water_simulation(scanned_elev, env, **kwargs):
+    gs.run_command(
+        "r.slope.aspect", elevation=scanned_elev, slope="dx", aspect="dy", env=env
+    )
+
+    gs.run_command(
+        "r.watershed",
+        elevation=scanned_elev,
+        accumulation="flow_accum",
+        basin="watersheds",
+        threshold=1000,
+        flags="a",
+        env=env,
+    )
+
+    gs.run_command(
+        "r.sim.water",
+        elevation=scanned_elev,
+        dx="dx",
+        dy="dy",
+        rain_value=75,
+        depth="depth",
+        discharge="discharge",
+        niterations=30,
+        flags="t",
+        env=env,
+    )
 
 
 def main():
@@ -17,7 +42,7 @@ def main():
     gs.run_command("g.region", raster=elevation, res=4, flags="a", env=env)
     gs.run_command("r.resamp.stats", input=elevation, output=elev_resampled, env=env)
 
-    run_slope(scanned_elev=elev_resampled, env=env)
+    run_water_simulation(scanned_elev=elev_resampled, env=env)
 
 
 if __name__ == "__main__":

@@ -11,10 +11,10 @@
         "numscans": 1,
         "interpolate": true
       },
-      "analyses": "eamon.py",
-      "title": "Slope and Contours",
-      "author": "Example Contributor",
-      "instructions": "Change topography and observe changes in slope and contours."
+      "analyses": "eamon_demo.py",
+      "title": "water flow simulation",
+      "author": "Eamon Espey",
+      "instructions": "Change topography and observe changes in water flow simulation."
     }
   ]
 }
