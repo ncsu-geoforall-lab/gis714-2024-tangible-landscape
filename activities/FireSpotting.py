@@ -35,7 +35,7 @@ def run_function_with_points(scanned_elev, env, points=None, **kwargs):
             debug=True,
             env=env,
         )
- 
+
     simulate_fire_spotting(points, env)
 
 def simulate_fire_spotting(point_map, env, spotting_distance=100):
