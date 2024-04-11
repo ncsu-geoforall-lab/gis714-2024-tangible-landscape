@@ -2,10 +2,14 @@
   "tasks": [
     {
       "layers": [
-        ["d.rast", "map=slope"],
+        ["d.rast", "map=cost_surface"],
         [
-          "d.vect", "map=trail", "color=red", "fill_color=orange",
+          "d.vect", "map=focal_garden", "color=red", "fill_color=orange",
           "icon=basic/star", "size=15"
+        ],
+          [
+          "d.vect", "map=points", "color=orange", "fill_color=orange",
+          "icon=basic/circle", "size=10"
         ]
       ],
       "base": "elev_lid792_1m",
@@ -16,9 +20,9 @@
         "interpolate": true
         "calibrate":true
       },
-    "display": {"relative_size": [0.3, 0.1], "relative_position": [0, 0],
-            "fontsize": 12, "maximum": [10, 100],
-            "formatting_string": ["{:.1f}"], "title": ["Connectivity Value for This Configuration"]}
+    #"display": {"relative_size": [0.3, 0.1], "relative_position": [0, 0],
+           # "fontsize": 12, "maximum": [10, 100],
+           # "formatting_string": ["{:.1f}"], "title": ["Connectivity Value for This Configuration"]}
     },
       "analyses": "Gwen.py",
       "title": "Selecting locations for pollinator gardens that minimize overall travel time between floral resources",
