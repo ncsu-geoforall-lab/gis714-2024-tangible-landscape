@@ -16,10 +16,14 @@
         "interpolate": true
         "calibrate":true
       },
+    "display": {"relative_size": [0.3, 0.1], "relative_position": [0, 0],
+            "fontsize": 12, "maximum": [10, 100],
+            "formatting_string": ["{:.1f}"], "title": ["Connectivity Value for This Configuration"]}
+    },
       "analyses": "Gwen.py",
       "title": "Selecting locations for pollinator gardens that minimize overall travel time between floral resources",
       "author": "Gwen Kirschke",
-      "instructions": "Add garden locations and program will calculate minimum distance between gardens"
+      "instructions": "Add garden locations and program will calculate connectivity between those gardens and a randomly located focal garden"
     }
   ]
 }
