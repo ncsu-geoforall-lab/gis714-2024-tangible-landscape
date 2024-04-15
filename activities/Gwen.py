@@ -31,7 +31,9 @@ def run_function_with_points(scanned_elev, env, points=None, **kwargs):
         )
 
     # generate random point for focal garden
-    gs.run_command("v.random", output="focal_garden", npoints=1, seed=3)
+    gs.run_command(
+        "v.random", output="focal_garden", npoints=1, seed=3, flags="overwrite"
+    )
 
     # calculate connectivity between focal garden and points from pins
     gs.run_command(
@@ -40,6 +42,7 @@ def run_function_with_points(scanned_elev, env, points=None, **kwargs):
         start_points="focal_garden",
         stop_points=points,
         output="cost_surface",
+        flags="overwrite",
     )
     data = gs.read_command("r.what", map="cost_surface", points="points")
     data_lines = data.splitlines()
@@ -48,6 +51,10 @@ def run_function_with_points(scanned_elev, env, points=None, **kwargs):
         line = line.split("|")
         line = float(line[3])
         connectivity += 1 / line
+
+    # display the connectivity metric
+    # event = updateDisplay(value=connectivity)
+    # eventHandler.postEvent(receiver=eventHandler.activities_panel, event=event
 
 
 def main():
