@@ -16,10 +16,6 @@
         ]
       ],
       "base": "elev_lid792_1m",
-      #"display": {"relative_size": [0.3, 0.1], "relative_position": [0, 0],
-           # "fontsize": 12, "maximum": [10, 100],
-           # "formatting_string": ["{:.1f}"], "title": ["Connectivity Value for This Configuration"]}
-      #},
       "scanning_params": {
         "smooth": 10,
         "zexag": 2,
