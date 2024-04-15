@@ -1,20 +1,5 @@
 #!/usr/bin/env python3
 
-"""
-Instructions
-
-- Functions intended to run for each scan
-  need to start with `run_`, e.g., `run_slope`.
-
-- Do not modify the parameters of the `run_` function
-  unless you know what you are doing.
-  See optional parameters at:
-  https://github.com/tangible-landscape/grass-tangible-landscape/wiki/Running-analyses-and-developing-workflows#python-workflows
-
-- All gs.run_command/read_command/write_command/parse_command
-  need to be passed *env* parameter like this: `(..., env=env)`.
-"""
-
 import os
 
 import grass.script as gs
@@ -45,31 +30,24 @@ def run_function_with_points(scanned_elev, env, points=None, **kwargs):
             env=env,
         )
 
-    # generate random point for focal garden
-    gs.run_command("v.random", output="focal_garden", npoints=1, seed=3)
+        # generate random point for focal garden
+        gs.run_command("v.random", output="focal_garden", npoints=1, seed=3)
 
-    # calculate the cost surface
-    gs.run_command(
-        "r.cost",
-        input="cfactorgrow_1m",
-        output="cost_surface",
-        start_points="focal_garden",
-        stop_points=points,
-    )
-
-    # calculate connectivity metric
-    data = gs.read_command("r.what", map="cost_surface", points=points)
-    data_lines = data.splitlines()
-    data = data_lines.split("|")
-    i = 3
-    connectivity = 0
-    for datum in data:
-        connectivity += 1 / data[i]
-        i += 3
-
-    # display the connectivity metric
-    # event = updateDisplay(value=connectivity)
-    # eventHandler.postEvent(receiver=eventHandler.activities_panel, event=event
+        # calculate connectivity between focal garden and points from pins
+        gs.run_command(
+            "r.cost",
+            input="cfactorgrow_1m",
+            start_points="focal_garden",
+            stop_points="points",
+            output="cost_surface",
+        )
+        data = gs.read_command("r.what", map="cost_surface", points="points")
+        data_lines = data.splitlines()
+        connectivity = 0
+        for line in data_lines:
+            line = line.split("|")
+            line = float(line[3])
+            connectivity += 1 / line
 
 
 def main():
