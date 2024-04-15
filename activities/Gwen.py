@@ -30,24 +30,24 @@ def run_function_with_points(scanned_elev, env, points=None, **kwargs):
             env=env,
         )
 
-        # generate random point for focal garden
-        gs.run_command("v.random", output="focal_garden", npoints=1, seed=3)
+    # generate random point for focal garden
+    gs.run_command("v.random", output="focal_garden", npoints=1, seed=3)
 
-        # calculate connectivity between focal garden and points from pins
-        gs.run_command(
-            "r.cost",
-            input="cfactorgrow_1m",
-            start_points="focal_garden",
-            stop_points="points",
-            output="cost_surface",
-        )
-        data = gs.read_command("r.what", map="cost_surface", points="points")
-        data_lines = data.splitlines()
-        connectivity = 0
-        for line in data_lines:
-            line = line.split("|")
-            line = float(line[3])
-            connectivity += 1 / line
+    # calculate connectivity between focal garden and points from pins
+    gs.run_command(
+        "r.cost",
+        input="cfactorgrow_1m",
+        start_points="focal_garden",
+        stop_points=points,
+        output="cost_surface",
+    )
+    data = gs.read_command("r.what", map="cost_surface", points="points")
+    data_lines = data.splitlines()
+    connectivity = 0
+    for line in data_lines:
+        line = line.split("|")
+        line = float(line[3])
+        connectivity += 1 / line
 
 
 def main():
@@ -62,9 +62,7 @@ def main():
     elev_resampled = "elev_resampled"
     # We use resampling to get a similar resolution as with Tangible Landscape.
     gs.run_command("g.region", raster=elevation, res=4, flags="a", env=env)
-    gs.run_command(
-        "r.resamp.stats", input=elevation, output=elev_resampled, env=env
-    )
+    gs.run_command("r.resamp.stats", input=elevation, output=elev_resampled, env=env)
     # The end of the block which needs no editing.
 
     # Code specific to testing of the analytical function.
@@ -80,9 +78,7 @@ def main():
         env=env,
     )
     # Call the analysis.
-    run_function_with_points(
-        scanned_elev=elev_resampled, env=env, points=points
-    )
+    run_function_with_points(scanned_elev=elev_resampled, env=env, points=points)
 
 
 if __name__ == "__main__":
