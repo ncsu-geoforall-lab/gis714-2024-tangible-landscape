@@ -2,7 +2,11 @@
   "tasks": [
     {
       "layers": [
+<<<<<<< HEAD
         ["d.rast", "map=flooding_114.0"], ["d.rast", "map=streams"]
+=======
+        ["d.rast", "map=flooding_114.5"], ["d.rast", "map=streams"]
+>>>>>>> 688e9cc59939a819a0cd114aee9672be450cb313
       ],
       "base": "elev_lid792_2m",
       "scanning_params": {
