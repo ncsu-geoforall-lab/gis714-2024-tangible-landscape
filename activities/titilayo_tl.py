@@ -5,8 +5,8 @@ import os
 import grass.script as gs
 
 def run_overlandflow(scanned_elev, env, **kwargs):
-    gs.run_command("v.to.rast", input="streams@PERMANENT", output="rural_streams", use="val", val=1, flags="d")
-    gs.run_command("r.lake.series", elevation="elev_lid792_1m", seed="rural_streams", start_water_level=104.0, end_water_level=114.0, water_level_step = 0.2, output="flooding")
+    gs.run_command("r.watershed", elevation=scanned_elev, threshold=5000, accumulation="accum", drainage="drainage_direction", stream="streams", flags="a")
+    gs.run_command("r.lake.series", elevation=scanned_elev, seed="streams", start_water_level=104, end_water_level=114, water_level_step=0.5, output="flooding")
 
 def main():
     env = os.environ.copy()
