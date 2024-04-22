@@ -42,6 +42,7 @@ jobs:
       - name: Get addons
         run: |
           grass --tmp-location XY --exec g.extension r.accumulate
+          grass --tmp-location XY --exec g.extension r.lake.series
 
       - name: Test execution of Python files
         run: |
