@@ -1,18 +1,21 @@
 {
-  "tasks": [
+    "tasks": [
       {
-          "layers": [["d.rast", "map=flooding_114.0"], ["d.rast", "map=streams"]],
-          "base": "elev_lid792_1m",
-          "scanning_params": {
-              "smooth": 10,
-              "zexag": 2,
-              "numscans": 1,
-              "interpolate": true,
-          },
-          "analyses": "titilayo_tl.py",
-          "title": "Water level and overland flow",
-          "author": "Titilayo Tajudeen",
-          "instructions": "Change in water level and observed change in overland flow using stream raster as the seed point.",
+        "layers": [
+          ["d.rast", "map=flooding_114.0"], ["d.rast", "map=streams"]
+        ],
+        "base": "elev_lid792_1m",
+        "scanning_params": {
+          "smooth": 10,
+          "zexag": 2,
+          "numscans": 1,
+          "interpolate": true
+        },
+        "analyses": "titilayo_tl.py",
+        "title": "Water level and overland flow",
+        "author": "Titilayo Tajudeen",
+        "instructions": "Change in water level and observed change in overland flow using stream raster as the seed point."
       }
-  ]
-}
+    ]
+  }
+  
