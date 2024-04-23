@@ -51,8 +51,7 @@ def main():
     # Updated layer names
     base_elev = "base_elevation_layer"
     scanned_elev = "scanned_elevation"
-    spotting_threshold = 1  # The threshold for fire spotting depends on height can be adjusted for canopy
-
+    spotting_threshold = 1  # The threshold for fire spotting
     run_difference(base_elev, scanned_elev, env)
     simulate_fire_spotting("diff", spotting_threshold, env)
 
