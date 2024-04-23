@@ -19,7 +19,7 @@
           "interpolate": true
         },
         "calibrate": true,
-        "analyses": "FireSpotting3.py",
+        "analyses": "FireSpotting.py",
         "title": "Load, Display Points and simulate fire_Spotting",
         "author": "M.Sh3hzaib",
         "instructions": "Place markers on the landscape and see if they can be used to simulate fire spotting behavior."
