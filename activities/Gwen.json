@@ -1,0 +1,36 @@
+{
+  "tasks": [
+    {
+      "layers": [
+        [
+          "d.vect",
+          "map=points",
+          "icon=basic/pin",
+          "size=60",
+          "color=#00284E",
+          "fill_color=#00509E"
+        ],
+        [
+          "d.rast",
+          "map=cost_surface"
+        ]
+      ],
+      "base": "elev_lid792_1m",
+      "scanning_params": {
+        "smooth": 10,
+        "zexag": 2,
+        "numscans": 1,
+        "interpolate": true
+      },
+      "display": {"relative_size": [0.3, 0.1], "relative_position": [0, 0],
+           "fontsize": 12, "maximum": [10, 100],
+           "formatting_string": ["{:.1f}"], "title": ["Connectivity Value for This Configuration"]
+      },
+      "calibrate": true,
+      "analyses": "Gwen.py",
+      "title": "Pollinator Connectivity Among Garden Locations",
+      "author": "Gwen Kirschke",
+      "instructions": "Place markers on the landscape and program will calculate and display a metric for how well a pollinator could access them from a random starting point."
+    }
+  ]
+}
