@@ -1,20 +1,28 @@
 {
-  "tasks": [
-    {
-      "layers": [
-        ["d.rast", "map=fire_hotspots"]
-      ],
-      "base": "base_elevation_layer",
-      "scanning_params": {
-        "smooth": 10,
-        "zexag": 2,
-        "numscans": 1,
-        "interpolate": true
-      },
-      "analyses": "fire_spotting_activity.py",
-      "title": "Fire Spotting Simulation",
-      "author": "M.Shehzaib Ali",
-      "instructions": "This activity simulates fire spotting in areas with significant elevation changes. Reshape the landscape, scan, and observe where fire hotspots could emerge based on elevation differences."
-    }
-  ]
-}
+    "tasks": [
+      {
+        "layers": [
+          [
+            "d.vect",
+            "map=new_fire_spots",
+            "icon=basic/pin",
+            "size=60",
+            "color=#e02d12",
+            "fill_color=#e01212"
+          ]
+        ],
+        "base": "elev_lid792_1m",
+        "scanning_params": {
+          "smooth": 10,
+          "zexag": 2,
+          "numscans": 1,
+          "interpolate": true
+        },
+        "calibrate": true,
+        "analyses": "FireSpotting3.py",
+        "title": "Load, Display Points and simulate fire_Spotting",
+        "author": "M.Sh3hzaib",
+        "instructions": "Place markers on the landscape and see if they can be used to simulate fire spotting behavior."
+      }
+    ]
+  }
