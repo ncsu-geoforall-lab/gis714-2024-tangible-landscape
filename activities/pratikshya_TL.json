@@ -11,7 +11,7 @@
         "numscans": 1,
         "interpolate": true
       },
-      "analyses": "pratikshya.py",
+      "analyses": "pratikshya_TL.py",
       "title": "SIMWE",
       "instructions": "Change topography and observe changes in surface water flow."
     }

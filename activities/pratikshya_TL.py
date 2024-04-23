@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 
+
 import os
 
 import grass.script as gs
@@ -7,9 +8,23 @@ import grass.script as gs
 
 def run_waterflow(scanned_elev, env, **kwargs):
     # first we need to compute x- and y-derivatives
-    gs.run_command('r.slope.aspect', elevation=scanned_elev, dx='scan_dx', dy='scan_dy', env=env)
-    gs.run_command('r.sim.water', elevation=scanned_elev, dx='scan_dx', dy='scan_dy',
-                   rain_value=150, infil_value=0, man_value=0.05, depth='flow', nwalkers=100000, niterations=30, env=env)
+
+    gs.run_command(
+        "r.slope.aspect", elevation=scanned_elev, dx="scan_dx", dy="scan_dy", env=env
+    )
+    gs.run_command(
+        "r.sim.water",
+        elevation=scanned_elev,
+        dx="scan_dx",
+        dy="scan_dy",
+        rain_value=150,
+        infil_value=0,
+        man_value=0.05,
+        depth="flow",
+        nwalkers=100000,
+        niterations=30,
+        env=env,
+    )
 
 
 def main():
