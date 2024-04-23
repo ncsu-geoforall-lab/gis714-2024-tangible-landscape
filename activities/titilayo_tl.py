@@ -7,7 +7,8 @@ import grass.script as gs
 
 
 def run_overlandflow(scanned_elev, env, **kwargs):
-    # generate a stream from the elevation map and use the stream as the seed for the r.lake.series
+    # generate a stream from the elevation map
+    # use the stream as the seed for the r.lake.series
 
     gs.run_command(
         "r.watershed",
