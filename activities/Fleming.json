@@ -1,0 +1,23 @@
+{
+  "tasks": [
+    {
+      "layers": [
+        [
+          "d.rast",
+          "map=output_lake"
+        ]
+      ],
+      "base": "elev_lid792_1m",
+      "scanning_params": {
+        "smooth": 10,
+        "zexag": 2,
+        "numscans": 1,
+        "interpolate": true
+      },
+      "analyses": "Fleming.py",
+      "title": "Protecting area from flooding",
+      "author": "Christian Fleming",
+      "instructions": "Modify the terrain to protect the area from flooding."
+    }
+  ]
+}
