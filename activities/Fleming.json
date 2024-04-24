@@ -5,12 +5,6 @@
         [
           "d.rast",
           "map=output_lake"
-        ],
-        [
-          "d.vect",
-          "map=hog_lagoon",
-          "color=red",
-          "fill_color=red"
         ]
       ],
       "base": "elev_lid792_1m",
