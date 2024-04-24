@@ -13,6 +13,7 @@
       },
       "analyses": "pratikshya_TL.py",
       "title": "SIMWE",
+      "author": "Pratikshya Regmi",
       "instructions": "Change topography and observe changes in surface water flow."
     }
   ]
